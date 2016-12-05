@@ -1,4 +1,4 @@
-require('./login.js');
+require('./login.es6');
 
 document.write('Welcome to Big Hair Concerts Baby!!!');
 
