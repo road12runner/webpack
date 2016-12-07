@@ -9,9 +9,11 @@ module.exports = {
   context : path.resolve('js'),
   // entry: ['./utils', './app'],
   entry : {
-    about: './about_page',
-    home: './home_page',
-    contact: './contact_page'
+    // about: './about_page',
+    // home: './home_page',
+    // contact: './contact_page'
+    //express: './middleware_app'
+    custom_loader : './custom_app'
   },
   output: {
     path: path.resolve('build/'),
@@ -52,7 +54,18 @@ module.exports = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
         //loader: 'style-loader!'
+      },
+      {
+        test: /\.(png|jpg|ttf|eof)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=10000'
+      },
+      {
+        test: /\.(json)$/,
+        exclude: /node_modules/,
+        loader: 'json-loader!' + path.resolve('loaders/strip')
       }
+
     ]
   },
   resolve : {

@@ -1,4 +1,5 @@
 body {
+  font-family: 'Bangee, Helvetica, Arial';
   padding-top: 80px;
 }
 
@@ -7,5 +8,18 @@ body {
 }
 
 .bg_header_img {
-  background: url(../image/webpack.logo.png) -131px 1px no-repeat;
+  background: url(../images/webpack.logo.png) -131px 1px no-repeat;
+  margin-right: 15px;
+  height: 150px;
+  width: 150px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+
+@font-face {
+  font-family: 'Bangee';
+  src: url('../fonts/Bungee-Regular.ttf');
 }
