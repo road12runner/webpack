@@ -3,7 +3,8 @@
 // import styles from '../css/app.css';
 
 
-// require('../css/bootstrap.css');
-// require('../css/app.scss');
+require('../css/bootstrap.css');
+require('../css/app.scss');
+//require('css!./styles.css');
 
 console.log('Home Page');

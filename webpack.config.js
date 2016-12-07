@@ -29,35 +29,28 @@ module.exports = {
   watch: true,
 
   module: {
-    preLoaders: [
-      {
-        test: /\.js/,
-        exclude: 'node-modules',
-        loader: 'jshint-loader'
-      }
-    ],
+    // preLoaders: [
+    //   {
+    //     test: /\.js/,
+    //     exclude: 'node-modules',
+    //     loader: 'jshint-loader'
+    //   }
+    // ],
     loaders: [
       {
         test: /\.es6/,
         exclude: /node-modules/,
         loader: "babel-loader"
       },
-      // {
-      //   test: /\.css$/,
-      //   exclude: /node_modules/,
-      //   loader: ExtractTextPlugin.extract({
-      //     fallbackLoader: "style-loader",
-      //     loader: "css-loader"
-      //   })
-      // },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract("style-loader","css-loader")
+      },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader!sass-loader",
-          publicPath: 'public/assets/'
-        })
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
         //loader: 'style-loader!'
       }
     ]
